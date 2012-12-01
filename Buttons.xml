@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><Events><Event><Id>1</Id><Counter>100</Counter></Event><Event><Id>2</Id><Counter>200</Counter></Event><Event><Id>3</Id><Counter>317</Counter></Event></Events>
+<?xml version="1.0" encoding="UTF-8"?>
+		<Events>	<Event>
+				<Id>1</Id>
+				<Counter>124</Counter>
+				</Event>	<Event>
+				<Id>2</Id>
+				<Counter>202</Counter>
+				</Event>	<Event>
+				<Id>3</Id>
+				<Counter>319</Counter>
+				</Event>	<Event>
+				<Id>4</Id>
+				<Counter>0</Counter>
+				</Event>	<Event>
+				<Id>5</Id>
+				<Counter>0</Counter>
+				</Event>	<Event>
+				<Id>6</Id>
+				<Counter>0</Counter>
+				</Event>	<Event>
+				<Id>7</Id>
+				<Counter>0</Counter>
+				</Event>	<Event>
+				<Id>8</Id>
+				<Counter>0</Counter>
+				</Event>	<Event>
+				<Id>9</Id>
+				<Counter>0</Counter>
+				</Event><Event>
+		<Id>10</Id>
+		<Counter>0</Counter>
+		</Event></Events>

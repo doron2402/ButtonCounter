@@ -1,27 +1,36 @@
 ﻿<?php
-if(isset($_POST['ButtonId']) && $_POST['ButtonId'] > 0)
+/*
+
+	Author	:	Doron Segal
+	Date	:	November 2012
+	AddEventCounterAjax.php
+	
+*/
+if(isset($_POST['Hash']) && $_POST['Hash'] > 1000)
 {
 
 	require('Config.php');
-	$Id = (int)$_POST['ButtonId'];
 	if (file_exists(XML_PATH.XML_FILENAME)) 
 	{
 		$xml = file_get_contents(XML_PATH.XML_FILENAME);
 		$Events = new SimpleXMLElement($xml);
 		$New_XML = '<?xml version="1.0" encoding="UTF-8"?>';
-		$New_XML .= '<Events>';
+		$New_XML .= '
+		<Events>';
+		$Id = 0;
 		foreach ($Events->Event as $Event)
 		{
-			if($Event->Id == $Id)
-			{
-				$newCounter = $Event->Counter + 1;
-				$New_XML .=	'<Event><Id>'.$Event->Id .'</Id><Counter>'.$newCounter.'</Counter></Event>';
-			}
-			else
-			{
-				$New_XML .=	'<Event><Id>'.$Event->Id .'</Id><Counter>'.$Event->Counter.'</Counter></Event>';
-			}
+				$New_XML .=	'	<Event>
+				<Id>'.$Event->Id .'</Id>
+				<Counter>'.$Event->Counter.'</Counter>
+				</Event>';
+				$Id = $Event->Id;
 		}
+		$Id=$Id+1;
+		$New_XML .= '<Event>
+		<Id>'.$Id .'</Id>
+		<Counter>0</Counter>
+		</Event>';
 		$New_XML .= '</Events>';
 		
 		//Save the new xml
@@ -39,10 +48,10 @@ if(isset($_POST['ButtonId']) && $_POST['ButtonId'] > 0)
 		die("Can't find the xml file");
 	}
 	
+	
 }
 else
 {
-	die("Wrong Id");
+	die("Wrong Hash");
 }
-
 ?>
