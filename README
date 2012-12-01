@@ -6,6 +6,21 @@
 	Date	:	Novmber 2012
 
 *******************************************************************************
+Files:
+
+example.php - example file show you how the event created and send the ajax request
+
+CounterAjax.php - responsable on adding +1 to the xml file 
+
+Config.php - contains variable such as the xml file name and directory
+
+Buttons.xml - contains the event data (format xml)
+
+ManageCounter.php - show you a log of the counts.
+
+AddEventCounterAjax.php - add an id to the xml file help you to create another event for your site.
+
+*******************************************************************************
 
 Event Counter is a simple tool to analyze your web site users by figure out events on your site.
 
