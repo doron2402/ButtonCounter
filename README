@@ -20,6 +20,8 @@ ManageCounter.php - show you a log of the counts.
 
 AddEventCounterAjax.php - add an id to the xml file help you to create another event for your site.
 
+DeleteEventCounterAjax.php - Delete the event ID from the xml file
+
 *******************************************************************************
 
 Event Counter is a simple tool to analyze your web site users by figure out events on your site.

@@ -24,16 +24,19 @@ $(document).ready(function() {
   // Handler for .ready() called.
 });
 
-function Counter(Id)
+function deleteEvent(Id)
 {
 	var Id = parseInt(Id);
-	var Url = 'CounterAjax.php';
+	var dataSend = "Id=" + Id;
+	var Url = 'DeleteEventCounterAjax.php';
 	$.ajax({
 	 type: "POST",
+	 data: dataSend,
 	  url: Url,
-	  data: 'ButtonId=' + Id,
+	  data: 'EventId=' + Id,
 	  success: function(data) {
 		console.log(data);
+		location.reload();
 	  }
 	});
 }
@@ -70,7 +73,7 @@ function addMore()
 		{
 			echo 'Id : ' . $Event->Id;
 			echo '<br />';
-			echo 'Number of clicks: ' . $Event->Counter;
+			echo '<p>Number of clicks: ' . $Event->Counter .'<a style="margin-left:10px;cursor:pointer;" onClick="deleteEvent('.$Event->Id.');">Delete Event</a></p>';
 			echo '<hr>';
 		}
 	
